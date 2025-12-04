@@ -221,7 +221,7 @@ CREATE TABLE transfer_windows (
 -- Wallets
 CREATE TABLE wallets (
     wallet_id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    player_id UUID REFERENCES player_profile(user_id),
+    player_id VARCHAR REFERENCES player_profile(player_id),
     balance NUMERIC DEFAULT 0,
     currency VARCHAR DEFAULT 'ETL',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
